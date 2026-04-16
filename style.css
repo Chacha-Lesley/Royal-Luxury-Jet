@@ -265,11 +265,13 @@ hr.rule {
   box-shadow: 0 18px 60px rgba(37, 211, 102, 0.24);
   transition: transform var(--transition), box-shadow var(--transition), filter var(--transition), opacity var(--transition);
 }
-.fab svg {
+.fab svg,
+.fab img {
   width: 18px;
   height: 18px;
   margin-right: 8px;
   flex-shrink: 0;
+  display: block;
 }
 .fab.hidden {
   opacity: 0;
