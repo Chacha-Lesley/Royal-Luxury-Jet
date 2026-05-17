@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Feather Icons CDN -->
   <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  </script>
 </head>
 <body>
 
@@ -380,21 +383,21 @@
               <div class="form__row">
                 <div class="form__group">
                   <label class="form__label" for="name">Full Name</label>
-                  <input class="form__input" type="text" id="name" name="name" placeholder="Your name" required />
+                  <input class="form__input" type="text" id="name" name="name" placeholder="Your name" required data-fs-field />
                 </div>
                 <div class="form__group">
                   <label class="form__label" for="email">Email Address</label>
-                  <input class="form__input" type="email" id="email" name="email" placeholder="you@email.com" required />
+                  <input class="form__input" type="email" id="email" name="email" placeholder="you@email.com" required data-fs-field />
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__group">
                   <label class="form__label" for="phone">Phone Number</label>
-                  <input class="form__input" type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX" />
+                  <input class="form__input" type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX" data-fs-field />
                 </div>
                 <div class="form__group">
                   <label class="form__label" for="passengers">Passengers</label>
-                  <select class="form__select" id="passengers" name="passengers">
+                  <select class="form__select" id="passengers" name="passengers" data-fs-field>
                     <option value="">Select</option>
                     <option>1 – 3</option>
                     <option>4 – 7</option>
@@ -406,21 +409,21 @@
               <div class="form__row">
                 <div class="form__group">
                   <label class="form__label" for="departure">Departure City / Airport</label>
-                  <input class="form__input" type="text" id="departure" name="departure" placeholder="e.g. Nairobi (NBO)" />
+                  <input class="form__input" type="text" id="departure" name="departure" placeholder="e.g. Nairobi (NBO)" data-fs-field />
                 </div>
                 <div class="form__group">
                   <label class="form__label" for="destination">Destination</label>
-                  <input class="form__input" type="text" id="destination" name="destination" placeholder="e.g. Zanzibar (ZNZ)" />
+                  <input class="form__input" type="text" id="destination" name="destination" placeholder="e.g. Zanzibar (ZNZ)" data-fs-field />
                 </div>
               </div>
               <div class="form__row">
                 <div class="form__group">
                   <label class="form__label" for="date">Travel Date</label>
-                  <input class="form__input" type="date" id="date" name="date" />
+                  <input class="form__input" type="date" id="date" name="date" data-fs-field />
                 </div>
                 <div class="form__group">
                   <label class="form__label" for="type">Charter Type</label>
-                  <select class="form__select" id="type" name="type">
+                  <select class="form__select" id="type" name="type" data-fs-field>
                     <option value="">Select</option>
                     <option>Business Charter</option>
                     <option>Leisure Flight</option>
@@ -433,15 +436,15 @@
               </div>
               <div class="form__group">
                 <label class="form__label" for="notes">Additional Requirements</label>
-                <textarea class="form__textarea" id="notes" name="notes" placeholder="Special catering, ground transfers, specific aircraft preferences, return dates…"></textarea>
+                <textarea class="form__textarea" id="notes" name="notes" placeholder="Special catering, ground transfers, specific aircraft preferences, return dates…" data-fs-field></textarea>
               </div>
-              <button type="submit" class="btn btn--primary form__submit">
+              <button type="submit" class="btn btn--primary form__submit" data-fs-submit-btn>
                 <svg data-feather="send" aria-hidden="true"></svg>
                 Submit Request
               </button>
               <p class="form__note">We respond within 2 hours during business hours, and within 4 hours overnight. Your details are kept entirely confidential.</p>
             </form>
-            <div class="form__success" id="formSuccess" role="alert">
+            <div class="form__success" data-fs-success role="alert" style="display:none;">
               <div class="form__success-icon">
                 <svg data-feather="check" aria-hidden="true"></svg>
               </div>
@@ -527,5 +530,9 @@
     // Initialise Feather icons after DOM ready
     feather.replace({ 'stroke-width': 1.5, width: '100%', height: '100%' });
   </script>
+  <script>
+    formspree('initForm', { formElement: '#quoteForm', formId: 'xredzjne' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>

@@ -820,28 +820,37 @@ hr.rule {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   padding: 60px 40px;
   border: 1px solid var(--border);
+  background: var(--bg-card);
   text-align: center;
+  border-radius: var(--radius);
+  min-height: 300px;
 }
-.form__success.visible { display: flex; }
+.form__success.visible { display: flex !important; }
 .form__success-icon {
-  width: 48px; height: 48px;
-  border: 1px solid var(--copper);
+  width: 56px; height: 56px;
+  border: 2px solid var(--copper);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   color: var(--copper);
 }
+.form__success-icon svg {
+  width: 28px; height: 28px;
+  stroke-width: 2;
+}
 .form__success-title {
   font-family: var(--ff-display);
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 300;
+  color: var(--ivory);
+  letter-spacing: -0.01em;
 }
 .form__success-body {
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   color: var(--ivory-dim);
-  max-width: 280px;
+  max-width: 360px;
   line-height: 1.8;
 }
 

@@ -71,27 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeEls.forEach(el => observer.observe(el));
   }
 
-  /* ── Quote / Contact form handling ───────────────────────── */
-  const form = document.getElementById('quoteForm');
-  const successEl = document.getElementById('formSuccess');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('.form__submit');
-      const originalText = btn.innerHTML;
-      btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sending…`;
-      btn.disabled = true;
-      setTimeout(() => {
-        form.style.display = 'none';
-        if (successEl) {
-          successEl.style.display = 'flex';
-          successEl.classList.add('visible');
-        }
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-      }, 1200);
-    });
-  }
+  /* ── Quote / Contact form handling (Formspree managed) ───── */
+  // Formspree now handles form submission via data-fs-* attributes
+  // The library will automatically show/hide data-fs-success elements
+  // No manual handling needed here
 
   /* ── Animated counter for stat numbers ───────────────────── */
   function animateCounter(el) {
